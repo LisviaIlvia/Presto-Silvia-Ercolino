@@ -32,6 +32,13 @@ h4,
 .bg-rosa {
     background-color: var(--rosa);
 }
+.bg-pesca {
+    background-color: var(--pesca);
+}
+.bg-giallo {
+    background-color: var(--giallo);
+}
+
 
 .text-indaco {
     color: var(--indaco);
@@ -43,4 +50,21 @@ h4,
 
 .text-rosa {
     color: var(--rosa);
+}
+/* Navbar */
+
+.navbar{
+    height: 70px;
+    transition: 0.5s;
+}
+.nav-link{
+    color: var(--pesca);
+    font-weight: 700;
+}
+.nav-link:hover {
+    color: white !important;
+    text-shadow: 2px 2px 5px var(--giallo), -2px -2px 5px var(--giallo);
+}
+.logo {
+    width: 50px;
 }
