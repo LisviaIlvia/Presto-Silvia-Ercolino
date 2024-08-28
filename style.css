@@ -1,0 +1,46 @@
+* {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+    font-family: "Matemasie", sans-serif;
+}
+
+:root {
+    --indaco: rgb(84, 70, 166);
+    --viola: rgb(122, 82, 149);
+    --rosa: rgb(186, 83, 151);
+    --pesca: rgb(242, 129, 111);
+    --giallo: rgb(244, 198, 77);
+}
+
+.bg-indaco {
+    background-color: var(--indaco);
+}
+
+.bg-viola {
+    background-color: var(--viola);
+}
+
+.bg-rosa {
+    background-color: var(--rosa);
+}
+
+.text-indaco {
+    color: var(--indaco);
+}
+
+.text-viola {
+    color: var(--viola);
+}
+
+.text-rosa {
+    color: var(--rosa);
+}
