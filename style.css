@@ -21,6 +21,10 @@ h4,
     --giallo: rgb(244, 198, 77);
 }
 
+body {
+    background-color: rgb(15, 15, 15);
+}
+
 .bg-indaco {
     background-color: var(--indaco);
 }
@@ -32,13 +36,19 @@ h4,
 .bg-rosa {
     background-color: var(--rosa);
 }
+
 .bg-pesca {
     background-color: var(--pesca);
 }
+
 .bg-giallo {
     background-color: var(--giallo);
 }
 
+
+.text-giallo {
+    color: var(--giallo);
+}
 
 .text-indaco {
     color: var(--indaco);
@@ -51,20 +61,102 @@ h4,
 .text-rosa {
     color: var(--rosa);
 }
+
 /* Navbar */
 
-.navbar{
-    height: 70px;
+.navbar {
+    height: 80px;
     transition: 0.5s;
 }
-.nav-link{
+
+.nav-link {
     color: var(--pesca);
     font-weight: 700;
 }
+
 .nav-link:hover {
     color: white !important;
     text-shadow: 2px 2px 5px var(--giallo), -2px -2px 5px var(--giallo);
 }
+
 .logo {
-    width: 50px;
+    width: 60px;
+}
+
+/* Header */
+
+header {
+
+    background-image: linear-gradient(rgba(0, 0, 0), transparent, rgba(0, 0, 0)), url('./media/header.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-custom {
+    color: var(--giallo);
+    background-color: var(--rosa);
+    border: 2px solid var(--giallo);
+    border-radius: 50px;
+    margin: 0px 15px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+.btn-custom:hover {
+    color: var(--rosa);
+    background-color: var(--giallo);
+    border: 2px solid var(--rosa);
+    transform: scale(1.1);
+}
+
+/* Positioned */
+.positioned {
+    position: relative;
+    top: -150px;
+}
+
+.col-custom {
+    padding: 10px;
+    border: 2px solid var(--rosa);
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10%;
+}
+
+.col-custom:hover {
+    transform: scale(1.1);
+    background-color: var(--viola);
+    color: var(--giallo);
+    border-color: var(--viola);
+}
+
+#logo-menu {
+    width: 60px;
+    transition: 1s;
+}
+
+/* Numeri Incrementali */
+.img-num-incrementali {
+    width: 500px;
+}
+
+.number {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 600px) {
+    .positioned {
+        position: static;
+    }
+
+    .col-custom {
+        border-color: black;
+    }
+
+    .logo {
+        display: none;
+    }
+
 }
