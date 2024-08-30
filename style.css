@@ -164,6 +164,7 @@ header {
     width: 500px;
     border: 2px solid var(--giallo);
     border-radius: 20px;
+    padding-top: 20px;
 }
 .swiper-slide {
     display: flex;

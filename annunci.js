@@ -106,23 +106,11 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
         }
     }
 
-    // function getRandomImage(width = 300) {
-
-    //     return `https://picsum.photos/${width}?random=${Math.random()}`;
-    // }
-
     function showCards(array) {
         cardWrapper.innerHTML = '';
         array.forEach((annuncio, i) => {
             let div = document.createElement('div');
             div.classList.add('card-custom');
-
-            // // Crea un elemento immagine e imposta la sorgente
-            // let img = document.createElement('img');
-            // img.src = getRandomImage(); // Imposta l'immagine casuale
-            // img.classList.add('img-fluid', 'img-card');
-            // ${img.outerHTML}
-
             div.innerHTML = `
                             <img src="https://picsum.photos/${300 + i}" alt="immagine casuale" class="img-fluid img-card">
                             <p class="h2" title="${annuncio.name}">${truncateWord(annuncio.name)}</p>
@@ -156,7 +144,7 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
 
     radioButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            setPriceInput();
+            setPriceInput(filterByCategory(data));
             globalFilter();
         })
     });
@@ -164,9 +152,9 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
     let priceInput = document.querySelector('#price-input');
     let priceValue = document.querySelector('#price-value');
 
-    function setPriceInput() {
+    function setPriceInput(array) {
         // Dopo aver catturato l'imput voglio settare come proprietà max dello stasso il valore piu alto tra i price di ogni annuncio. Per farlo avro bisogno di un array che contenga solo i prezzi, poi lo ordino in maniera decrescente e prendo lelemento con il valore piu alto
-        let prices = filterByCategory(data).map((annuncio) => +annuncio.price);
+        let prices = array.map((annuncio) => +annuncio.price);
         prices.sort((a, b) => a - b);
         let maxPrice = Math.ceil(prices.pop());
         console.log(maxPrice);
@@ -174,7 +162,7 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
         priceInput.value = maxPrice;
         priceValue.innerHTML = `${maxPrice} €`;
     }
-    setPriceInput();
+    setPriceInput(filterByCategory(data));
 
     function filterByPrice(array) {
 
