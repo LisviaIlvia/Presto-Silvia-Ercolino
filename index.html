@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -22,18 +24,18 @@
     <nav id="navbar" class="navbar navbar-expand-md bg-indaco fixed-top">
         <div class="container-fluid collapse">
             <a class="navbar-brand" href="#">
-                <img src="./media/logo-pesca.png" alt="logo" class="img-fluid logo d-none">
+                <img src="./media/logo-pesca.png" alt="logo" class="img-fluid logo">
             </a>
-            <img id="logo-menu" src="./media/menu-pesca.png" alt="menu" class="img-fluid d-md-none" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+            <img id="logo-menu" src="./media/menu-pesca.png" alt="menu" class="img-fluid d-md-none"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Annunci</a>
+                        <a class="nav-link" href="./annunci.html">Annunci</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Chi Siamo</a>
@@ -65,21 +67,24 @@
             <div class="col-10 col-md-4 bg-giallo d-flex flex-column align-items-center col-custom">
                 <i class="fa-solid fa-heart fa-3x my-3 color"></i>
                 <h3 class="my-3 color">Lorem Ipsum</h3>
-                <p class="lead text-center color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam inventore,
+                <p class="lead text-center color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                    inventore,
                     nihil veniam, eius doloribus adipisci molestias dignissimos reprehenderit enim modi dolore libero,
                     aspernatur porro eum sequi ad quam quidem cupiditate.</p>
             </div>
             <div class="col-10 col-md-4 bg-giallo d-flex flex-column align-items-center col-custom">
                 <i class="fa-solid fa-peace fa-3x my-3 color"></i>
                 <h3 class="my-3 color">Lorem Ipsum</h3>
-                <p class="lead text-center color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam inventore,
+                <p class="lead text-center color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                    inventore,
                     nihil veniam, eius doloribus adipisci molestias dignissimos reprehenderit enim modi dolore libero,
                     aspernatur porro eum sequi ad quam quidem cupiditate.</p>
             </div>
             <div class="col-10 col-md-4 bg-giallo d-flex flex-column align-items-center col-custom">
                 <i class="fa-solid fa-sun fa-3x my-3 color"></i>
                 <h3 class="my-3 color">Lorem Ipsum</h3>
-                <p class="lead text-center color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam inventore,
+                <p class="lead text-center color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                    inventore,
                     nihil veniam, eius doloribus adipisci molestias dignissimos reprehenderit enim modi dolore libero,
                     aspernatur porro eum sequi ad quam quidem cupiditate.</p>
             </div>
@@ -91,7 +96,8 @@
     <section class="container">
         <div class="row mb-5">
             <div class="col-12 col-md-6">
-                <img src="./media/person-wearing-colorful-fashion.jpg" alt="foto del fondatore" class="img-fluid img-num-incrementali">
+                <img src="./media/person-wearing-colorful-fashion.jpg" alt="foto del fondatore"
+                    class="img-fluid img-num-incrementali">
             </div>
             <div class="col-12 col-md-6 text-giallo">
                 <h3 class=" text-center">Un pò di numeri</h3>
@@ -105,7 +111,21 @@
     <!-- Numeri Incrementali End -->
 
     <!-- Recensioni -->
+    <section class="container">
+        <div class="row justify-content-center">
+            <dic class="col-12 col-md-8">
 
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                    </div>
+                  
+                </div>
+            </dic>
+        </div>
+    </section>
     <!-- Recensioni End -->
 
 
@@ -115,6 +135,8 @@
         crossorigin="anonymous"></script>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/bc24a0f505.js" crossorigin="anonymous"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="./main.js"></script>
 </body>
