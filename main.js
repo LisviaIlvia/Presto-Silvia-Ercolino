@@ -6,6 +6,7 @@ let collapse = document.querySelector('.collapse');
 let firstNumber = document.querySelector('#first-number');
 let secondNumber = document.querySelector('#second-number');
 let thirdNumber = document.querySelector('#third-number');
+let logoText = document.querySelector('.logo-text');
 
 let confirm = true;
 let check = false;
@@ -18,11 +19,10 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('bg-giallo');
         collapse.classList.remove('bg-indaco');
         collapse.classList.add('bg-giallo');
-        navbar.style.height = '70px';
         links.forEach((link) => {
             link.style.color = 'var(--rosa)';
         });
-        logo.innerHTML = `<img src="./media/logo-rosa.png" alt="logo" class="img-fluid logo">`;
+        logo.innerHTML = `<img src="./media/logo-rosa.png" alt="logo" class="img-fluid logo"><p id="logo-text" class="h6 d-inline ps-1 text-rosa">presto.it</p>`;
         menu.src = './media/menu-rosa.png';
 
     } else {
@@ -30,11 +30,10 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('bg-giallo');
         collapse.classList.add('bg-indaco');
         collapse.classList.remove('bg-giallo');
-        navbar.style.height = '70px';
         links.forEach((link) => {
             link.style.color = 'var(--pesca)';
         });
-        logo.innerHTML = `<img src="./media/logo-pesca.png" alt="logo" class="img-fluid logo">`
+        logo.innerHTML = `<img src="./media/logo-pesca.png" alt="logo" class="img-fluid logo"><p id="logo-text" class="h6 d-inline ps-1 text-pesca">presto.it</p>`;
         menu.src = './media/menu-pesca.png';
     }
 });

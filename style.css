@@ -9,7 +9,9 @@ h4,
 .h1,
 .h2,
 .h3,
-.h4 {
+.h4,
+.h5,
+.h6 {
     font-family: "Matemasie", sans-serif;
 }
 
@@ -62,10 +64,14 @@ body {
     color: var(--rosa);
 }
 
+.text-pesca {
+    color: var(--pesca);
+}
+
 /* Navbar */
 
 .navbar {
-    height: 80px;
+    height: 100px;
     transition: 0.5s;
 }
 
@@ -82,6 +88,8 @@ body {
 .logo {
     width: 60px;
 }
+
+
 
 /* Header */
 
@@ -181,7 +189,7 @@ header {
 }
 
 .card-custom {
-    height: 200px;
+    height: 400px;
     width: 30%;
     border: 2px solid var(--giallo);
     border-radius: 20px;

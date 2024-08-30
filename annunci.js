@@ -29,11 +29,10 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('bg-giallo');
         collapse.classList.remove('bg-indaco');
         collapse.classList.add('bg-giallo');
-        navbar.style.height = '70px';
         links.forEach((link) => {
             link.style.color = 'var(--rosa)';
         });
-        logo.innerHTML = `<img src="./media/logo-rosa.png" alt="logo" class="img-fluid logo">`;
+        logo.innerHTML = `<img src="./media/logo-rosa.png" alt="logo" class="img-fluid logo"><p id="logo-text" class="h6 d-inline ps-1 text-rosa">presto.it</p>`;
         menu.src = './media/menu-rosa.png';
 
     } else {
@@ -41,11 +40,10 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('bg-giallo');
         collapse.classList.add('bg-indaco');
         collapse.classList.remove('bg-giallo');
-        navbar.style.height = '70px';
         links.forEach((link) => {
             link.style.color = 'var(--pesca)';
         });
-        logo.innerHTML = `<img src="./media/logo-pesca.png" alt="logo" class="img-fluid logo">`
+        logo.innerHTML = `<img src="./media/logo-pesca.png" alt="logo" class="img-fluid logo"><p id="logo-text" class="h6 d-inline ps-1 text-pesca">presto.it</p>`;
         menu.src = './media/menu-pesca.png';
     }
 });
@@ -128,7 +126,7 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
             div.innerHTML = `
                             <img src="https://picsum.photos/${300 + i}" alt="immagine casuale" class="img-fluid img-card">
                             <p class="h2" title="${annuncio.name}">${truncateWord(annuncio.name)}</p>
-                            <p class="h4">${annuncio.category}</p>
+                            <p class="h4">${truncateWord(annuncio.category)}</p>
                             <p class="lead">${annuncio.price} €</p>
             `;
             cardWrapper.appendChild(div);
@@ -137,22 +135,29 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
 
     showCards(data);
 
-    function filterByCategory(categoria) {
-        // In questa funzione ho bisogno di ottenere un nuovo array, partendo da data e gli elementi del nuovo array dovranno soddisfare la condizione per la quale la loro category sia uguale alla categoria che passo alla funzione
-        if (categoria != 'all') {
-            let filtered = data.filter((annuncio) => annuncio.category == categoria);
-            showCards(filtered);
-        } else {
-            showCards(data);
-        }
+    let radioButtons = document.querySelectorAll('.form-check-input');
 
+
+    // In questa funzione ho bisogno di ottenere un nuovo array, partendo da data e gli elementi del nuovo array dovranno soddisfare la condizione per la quale la loro category sia uguale alla categoria che passo alla funzione
+
+    // La categoria voglio trovarla partendo dalla lista di tutti i bottoni e usare il metodo .find() degli array su questa lista La condizione da usare è il bottone che possiede l'attributo checked
+    function filterByCategory(array) {
+
+        let categoria = Array.from(radioButtons).find((button) => button.checked).id;
+
+            if (categoria != 'all') {
+                let filtered = array.filter((annuncio) => annuncio.category == categoria);
+                return filtered;
+            } else {
+                return array;
+            }
     }
 
-    let radioButtons = document.querySelectorAll('.form-check-input');
 
     radioButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            filterByCategory(button.id);
+            setPriceInput();
+            globalFilter();
         })
     });
 
@@ -161,7 +166,7 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
 
     function setPriceInput() {
         // Dopo aver catturato l'imput voglio settare come proprietà max dello stasso il valore piu alto tra i price di ogni annuncio. Per farlo avro bisogno di un array che contenga solo i prezzi, poi lo ordino in maniera decrescente e prendo lelemento con il valore piu alto
-        let prices = data.map((annuncio) => +annuncio.price);
+        let prices = filterByCategory(data).map((annuncio) => +annuncio.price);
         prices.sort((a, b) => a - b);
         let maxPrice = Math.ceil(prices.pop());
         console.log(maxPrice);
@@ -171,27 +176,36 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
     }
     setPriceInput();
 
-    function filterByPrice() {
+    function filterByPrice(array) {
 
-        let filterPrice = data.filter((annuncio) => +annuncio.price <= priceInput.value);
-        showCards(filterPrice);
+        let filtered = array.filter((annuncio) => +annuncio.price <= priceInput.value);
+        return filtered;
     }
 
     priceInput.addEventListener('input', () => {
         priceValue.innerHTML = `${priceInput.value} €`;
-        filterByPrice();
+        globalFilter();
     });
 
     let wordInput = document.querySelector('#word-input');
 
-    function filterByWord(word) {
-        let filtered = data.filter((annuncio) => annuncio.name.toLowerCase().includes(word.toLowerCase()));
-        showCards(filtered);
+    function filterByWord(array) {
+        let filtered = array.filter((annuncio) => annuncio.name.toLowerCase().includes(wordInput.value.toLowerCase()));
+        return filtered;
     }
 
     wordInput.addEventListener('input', () => {
-        filterByWord(wordInput.value);
+        globalFilter();
     })
 
+    // quello di cui ho bisogno è che ad ogni evento scattino tutte tre le funzioni di filtro ma non siano applicate tutte e tre sull array data, ma concatenate e ogniuna filtri il risultato della funzione di filtro precedente.
+
+    function globalFilter() {
+        let filteredByCategory = filterByCategory(data); // array filtrato per categoria
+        let filteredByPrice = filterByPrice(filteredByCategory); // array filtrato sia per categoria che per prezzo
+        let filteredByWord = filterByWord(filteredByPrice); // array filtrato per categoria, prezzo e parola
+
+        showCards(filteredByWord);
+    } 
 
 });
