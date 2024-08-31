@@ -99,7 +99,7 @@ fetch('./annunci.json').then((response) => response.json()).then((data) => {
     radioCreate();
 
     function truncateWord(string) {
-        if (string.length > 10) {
+        if (string.length > 8) {
             return string.split(' ')[0] + '...';
         } else {
             return string;

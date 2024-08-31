@@ -75,6 +75,11 @@ body {
     transition: 0.5s;
 }
 
+.collapse {
+    transition: 0.5s;
+}
+
+
 .nav-link {
     color: var(--pesca);
     font-weight: 700;
@@ -147,6 +152,7 @@ header {
 /* Numeri Incrementali */
 .img-num-incrementali {
     width: 500px;
+   
 }
 
 .number {
@@ -179,66 +185,66 @@ header {
     background-color: var(--viola);
     color: var(--giallo);
     padding: 60px 20px;
-  }
-  
-  .footer-container {
+}
+
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .footer-row {
+}
+
+.footer-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-  
-  .footer-col {
+}
+
+.footer-col {
     flex: 1;
     min-width: 220px;
     margin-bottom: 30px;
-  }
-  
-  .footer-col h4 {
+}
+
+.footer-col h4 {
     font-size: 18px;
     margin-bottom: 15px;
-  }
-  
-  .footer-col p {
+}
+
+.footer-col p {
     font-size: 14px;
     line-height: 24px;
-  }
-  
-  .footer-col ul {
+}
+
+.footer-col ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .footer-col ul li {
+}
+
+.footer-col ul li {
     margin-bottom: 10px;
-  }
-  
-  .footer-col ul li a {
+}
+
+.footer-col ul li a {
     color: var(--giallo);
     font-weight: 600;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;
-  }
-  
-  .footer-col ul li a:hover {
+}
+
+.footer-col ul li a:hover {
     color: #00bcd4;
-  }
-  
-  .footer-col ul li i {
+}
+
+.footer-col ul li i {
     margin-right: 10px;
-  }
-  
-  .social-links {
+}
+
+.social-links {
     display: flex;
     gap: 10px;
-  }
-  
-  .social-links a {
+}
+
+.social-links a {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -248,26 +254,26 @@ header {
     line-height: 40px;
     color: #fff;
     transition: background-color 0.3s ease;
-  }
-  
-  .social-links a:hover {
+}
+
+.social-links a:hover {
     background-color: #00bcd4;
-  }
-  
-  .newsletter-form {
+}
+
+.newsletter-form {
     display: flex;
     flex-direction: column;
-  }
-  
-  .newsletter-form input[type="email"] {
+}
+
+.newsletter-form input[type="email"] {
     padding: 10px;
     margin-bottom: 10px;
     border: none;
     border-radius: 4px;
     font-size: 14px;
-  }
-  
-  .newsletter-form button {
+}
+
+.newsletter-form button {
     padding: 10px;
     background-color: #00bcd4;
     border: none;
@@ -276,32 +282,32 @@ header {
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .newsletter-form button:hover {
+}
+
+.newsletter-form button:hover {
     background-color: #0097a7;
-  }
-  
-  .footer-bottom {
+}
+
+.footer-bottom {
     text-align: center;
     margin-top: 30px;
-  }
-  
-  .footer-bottom p {
+}
+
+.footer-bottom p {
     font-size: 14px;
     color: #aaa;
-  }
-  
-  .footer-bottom p a {
+}
+
+.footer-bottom p a {
     color: #00bcd4;
     text-decoration: none;
     margin-left: 5px;
-  }
-  
-  .footer-bottom p a:hover {
+}
+
+.footer-bottom p a:hover {
     text-decoration: underline;
-  }
-  
+}
+
 
 /* Pagina Annunci */
 
@@ -340,7 +346,13 @@ header {
 }
 
 /* About Us */
-
+.body-chi-siamo {
+    background-image: linear-gradient(rgba(0, 0, 0), transparent, rgba(0, 0, 0)), linear-gradient(rgba(0, 0, 0), transparent, rgba(0, 0, 0)), url('./media/bg-section.jpg');
+        background-position: center;
+        background-size:cover;
+        background-repeat: no-repeat;
+   }
+     
 .circle {
     height: 300px;
     width: 300px;
@@ -377,8 +389,9 @@ header {
     background-repeat: no-repeat;
     cursor: pointer;
 }
-.vh-75 {
-    height: 75vh;
+
+.vh-custom {
+    height: 95vh;
 }
 
 .flip-card {
@@ -387,14 +400,14 @@ header {
     border-radius: 5%;
 }
 
-.flip-card:hover > .inner{
+.flip-card:hover>.inner {
     transform: rotateY(180deg);
 }
 
 .inner {
     height: 100%;
     width: 100%;
-    
+
     border-radius: 5%;
     position: relative;
     transition: 1s;
@@ -405,8 +418,8 @@ header {
     height: 500px;
     width: 300px;
     border-radius: 5%;
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
     position: absolute;
@@ -429,6 +442,8 @@ header {
 
 
 @media screen and (max-width: 600px) {
+
+    /* Positioned */
     .positioned {
         position: static;
     }
@@ -437,8 +452,34 @@ header {
         border-color: black;
     }
 
+    /* Navbar */
     .logo {
         display: none;
+    }
+
+    /* Pagina Annunci */
+    .card-custom {
+        margin-top: 20px;
+        width: 80%;
+        min-height: 500px;
+    }
+    .img-card {
+        width: 100%;
+    }
+
+    /* Chi Siamo */
+    #card-wrapper-about-us {
+        height: 600px;   
+    }
+
+    .circle {
+        margin-top: 100px;
+    }
+
+    /* Footer */
+
+    .mega-footer {
+        margin-top: 200px;   
     }
 
 }

@@ -64,7 +64,7 @@ persons.forEach((person) => {
 });
 
 let moveds = document.querySelectorAll('.moved');
-let cardWrapper = document.querySelector('#card-wrapper');
+let cardWrapper = document.querySelector('#card-wrapper-about-us');
 
 opener.addEventListener('click', () => {
     if (!check) {
