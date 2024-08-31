@@ -60,9 +60,11 @@ persons.forEach((person) => {
     div.classList.add('moved');
     div.style.backgroundImage = `url(${person.url})`
     circle.appendChild(div);
-    
+
 });
+
 let moveds = document.querySelectorAll('.moved');
+let cardWrapper = document.querySelector('#card-wrapper');
 
 opener.addEventListener('click', () => {
     if (!check) {
@@ -83,16 +85,18 @@ opener.addEventListener('click', () => {
     }
 });
 
-let innerBack = document.querySelector('.inner-back');
+
+
+
 let cardName = document.querySelector('#card-name');
 let cardRole = document.querySelector('#card-role');
 let cardDescription = document.querySelector('#card-description');
-let cardWrapper = document.querySelector('#card-wrapper');
 
-moveds.forEach((moved, i)=> {
-    moved.addEventListener('click', ()=> {
+
+moveds.forEach((moved, i) => {
+    moved.addEventListener('click', () => {
         let persona = persons[i];
-       
+        cardWrapper.innerHTML = '';
         let div = document.createElement('div');
         div.classList.add('flip-card');
         div.innerHTML = `
@@ -110,6 +114,6 @@ moveds.forEach((moved, i)=> {
         let innerFace = document.querySelector('.inner-face');
 
         innerFace.style.backgroundImage = `url(${persona.url})`
-      
+
     });
 });
