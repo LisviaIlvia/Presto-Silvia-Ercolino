@@ -166,6 +166,7 @@ header {
     border-radius: 20px;
     padding-top: 20px;
 }
+
 .swiper-slide {
     display: flex;
     align-items: center;
@@ -175,7 +176,8 @@ header {
 
 /* Pagina Annunci */
 
-.accordion-item, .accordion-button {
+.accordion-item,
+.accordion-button {
     background-color: rgb(15, 15, 15);
     color: var(--giallo);
 }
@@ -185,6 +187,7 @@ header {
     background-color: rgb(15, 15, 15);
     box-shadow: none;
 }
+
 .accordion-button:focus {
     box-shadow: none;
 }
@@ -201,10 +204,99 @@ header {
     color: var(--giallo);
     margin-bottom: 20px;
 }
+
 .img-card {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
+
+/* About Us */
+
+.circle {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 3px solid var(--giallo);
+    position: relative;
+}
+
+.opener {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 2px solid var(--indaco);
+    position: absolute;
+    background-color: rgb(15, 15, 15);
+    z-index: 3;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.moved {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 2px solid var(--rosa);
+    position: absolute;
+    background-color: var(--rosa);
+    z-index: 2;
+    transition: 1s;
+    background-size: cover;
+    /* Ridimensiona l'immagine per coprire l'intero elemento */
+    background-position: center;
+    /* Centra l'immagine all'interno dell'elemento */
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.vh-75 {
+    height: 75vh;
+}
+
+.flip-card {
+    height: 500px;
+    width: 300px;
+    border-radius: 5%;
+}
+
+.flip-card:hover > .inner{
+    transform: rotateY(180deg);
+}
+
+.inner {
+    height: 100%;
+    width: 100%;
+    
+    border-radius: 5%;
+    position: relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.inner-face {
+    height: 500px;
+    width: 300px;
+    border-radius: 5%;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.inner-back {
+    min-height: 500px;
+    width: 300px;
+    border: 2px solid var(--giallo);
+    border-radius: 5%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    padding: 15px;
+    text-align: center;
+    color: var(--giallo);
+}
+
 
 
 @media screen and (max-width: 600px) {
