@@ -469,7 +469,16 @@ header {
 
     /* Chi Siamo */
     #card-wrapper-about-us {
-        height: 600px;   
+        height: auto; 
+        margin-top: 20px;  
+        padding-top: 30px; 
+    }
+
+    .vh-custom {
+        height: auto;
+    }
+    #bg-section {
+        padding-bottom: 60px;  
     }
 
     .circle {
@@ -479,7 +488,8 @@ header {
     /* Footer */
 
     .mega-footer {
-        margin-top: 200px;   
-    }
+        margin-top: 40px; 
+        padding-bottom: 60px;   
+    } 
 
 }
